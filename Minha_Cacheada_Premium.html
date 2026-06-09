@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Cacheada 💜</title>
+<style>
+body{margin:0;background:linear-gradient(180deg,#fffdf8,#f3ebff);font-family:Georgia,serif;color:#4d3b5c}
+section{padding:70px 22px;max-width:900px;margin:auto}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.envelope{font-size:80px;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.btn{background:#b48ad6;color:white;border:none;padding:14px 28px;border-radius:30px;font-size:18px}
+.photo{width:100%;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.polaroid{background:white;padding:12px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.12);margin:20px 0}
+.counter{font-size:26px;font-weight:bold;text-align:center;color:#8f68c4}
+.letter{background:#fffdf7;padding:25px;border-radius:20px;line-height:1.9;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.vinyl{width:200px;height:200px;border-radius:50%;margin:auto;background:radial-gradient(circle,#555 10%,#111 12%,#111 100%);animation:spin 6s linear infinite;animation-play-state:paused}
+.playing{animation-play-state:running}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.secret{display:none;text-align:center}
+h1,h2{text-align:center}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="envelope">💌</div>
+<h1>Minha Cacheada 💜</h1>
+<p>Eu guardei algumas lembranças para você.</p>
+<button class="btn" onclick="document.getElementById('inicio').scrollIntoView({behavior:'smooth'})">Abrir ❤️</button>
+</section>
+
+<section id="inicio">
+<div class="counter" id="contador"></div>
+</section>
+
+<section>
+<div class="polaroid">
+<img src="foto1.jpg" class="photo">
+<p><em>"Algumas lembranças não precisam ser perfeitas para serem inesquecíveis."</em></p>
+</div>
+</section>
+
+<section>
+<h2>O Começo</h2>
+<p>03/01/2025 — O começo de uma conversa.</p>
+<p>11/01/2025 — O começo de algo especial.</p>
+<p>⛪ A igreja foi o lugar onde nossos caminhos se cruzaram.</p>
+</section>
+
+<section>
+<div class="polaroid">
+<img src="foto2.jpg" class="photo">
+<p><em>"Existem momentos que continuam aquecendo o coração mesmo depois de muito tempo."</em></p>
+</div>
+</section>
+
+<section>
+<h2>Pequenos Detalhes</h2>
+<p>💜 Lilás</p>
+<p>🍫 Brigadeiro</p>
+<p>🌸 Minha Cacheada</p>
+<p>🎵 Heaven Can Wait</p>
+</section>
+
+<section>
+<h2>Nossa Música</h2>
+<div id="vinyl" class="vinyl"></div><br>
+<audio id="music" controls style="width:100%">
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+</section>
+
+<section>
+<h2>Uma Carta Para Você</h2>
+<div class="letter">
+<p>Oi, Ana Beatriz.</p>
+
+<p>Talvez o tempo tenha seguido em frente, mas algumas lembranças continuam encontrando um lugar especial dentro da gente.</p>
+
+<p>Eu não fiz isso para mudar o passado. Fiz porque existem histórias que merecem ser guardadas com carinho.</p>
+
+<p>Obrigado pelos momentos, pelas conversas, pelos sorrisos e pelas memórias que construímos.</p>
+
+<p>Você foi e continua sendo muito especial para mim.</p>
+
+<p>Entre todas as pessoas que passaram pela minha vida, você ocupa um espaço que o tempo nunca conseguiu apagar.</p>
+
+<p>Com carinho, admiração e gratidão.</p>
+
+<p><strong>— Do seu eterno admirador 💜</strong></p>
+</div>
+</section>
+
+<section>
+<div class="polaroid">
+<img src="foto3.jpg" class="photo">
+<p><em>"Entre todas as lembranças, você continua sendo uma das minhas favoritas."</em></p>
+</div>
+</section>
+
+<section style="text-align:center">
+<button class="btn" onclick="document.getElementById('secret').style.display='block'">Uma última coisa...</button>
+</section>
+
+<section id="secret" class="secret">
+<h2>💜</h2>
+<p>Se você chegou até aqui...</p>
+<p>Obrigado por ter feito parte de uma das fases mais bonitas da minha vida.</p>
+<p>Algumas pessoas passam.</p>
+<p>Outras permanecem nas lembranças que carregamos.</p>
+<p>Você permanece.</p>
+<p><strong>Minha Cacheada. 💜</strong></p>
+</section>
+
+<script>
+const start=new Date("2025-01-03");
+const now=new Date();
+const days=Math.floor((now-start)/(1000*60*60*24));
+document.getElementById("contador").innerText=days+" dias desde o início da nossa história";
+
+const music=document.getElementById("music");
+const vinyl=document.getElementById("vinyl");
+music.addEventListener("play",()=>vinyl.classList.add("playing"));
+music.addEventListener("pause",()=>vinyl.classList.remove("playing"));
+</script>
+
+</body>
+</html>
